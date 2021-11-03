@@ -1,0 +1,28 @@
+{
+  "name": "contact-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "type": "module",
+  "sideEffects": [
+    "src/index.d.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
+    "start": "node build.js -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@es-pack/esbuild-sass-plugin": "^1.0.4",
+    "@types/lodash-es": "^4.17.4",
+    "esbuild": "^0.12.20",
+    "esbuild-serve": "^1.0.1",
+    "essass": "^1.1.0"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  }
+}
