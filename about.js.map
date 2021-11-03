@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/header/header.ts", "../src/about.ts"],
+  "sourcesContent": ["import template from \"./header.html\";\nimport logo from \"./logo.png\";\nimport add from \"./add.png\";\nimport \"./header.scss\";\n\nexport function renderHeader() {\n  const header = document.createElement(\"div\");\n  header.className = \"header\";\n\n  header.innerHTML = template;\n\n  header.querySelector(\".app-logo\").setAttribute(\"src\", logo);\n  header.querySelector(\".add-icon\").setAttribute(\"src\", add);\n\n  document.body.appendChild(header);\n}\n", "import \"./index.d\";\n\nimport { renderHeader } from \"./header/header\";\n\nrenderHeader();\n\nimport \"./style.css\";\n"],
+  "mappings": ";;;yDAKO,YAAwB,CAC7B,GAAM,GAAS,SAAS,cAAc,OACtC,EAAO,UAAY,SAEnB,EAAO,UAAY,EAEnB,EAAO,cAAc,aAAa,aAAa,MAAO,GACtD,EAAO,cAAc,aAAa,aAAa,MAAO,GAEtD,SAAS,KAAK,YAAY,GCV5B",
+  "names": []
+}
