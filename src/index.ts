@@ -7,4 +7,4 @@ renderHeader();
 renderContactList();
 
 import "./style.css";
-import "./header/header.scss";
+// import "./header/header.scss";
