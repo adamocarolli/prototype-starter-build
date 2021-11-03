@@ -1,7 +1,6 @@
 import esbuildServe from "esbuild-serve";
 import sassEs from "essass";
 import yargs from 'yargs';
-import copy from 'copy';
 
 async function main(options) {
   try {

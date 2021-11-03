@@ -4,7 +4,7 @@ on:
         branches:
             - main
 jobs:
-    deploy-pages:
+    build-and-deploy-pages:
 
         runs-on: ubuntu-latest
 
@@ -28,7 +28,7 @@ jobs:
 
             - name: build
               working-directory: ./
-              run: yarn pages
+              run: yarn build
 
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@3.6.2

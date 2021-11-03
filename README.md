@@ -1,1 +1,7 @@
-# App Build
+# Prototype Starter Build
+
+## Installation
+```
+yarn
+yarn start
+```
