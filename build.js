@@ -1,28 +1,40 @@
 import esbuildServe from "esbuild-serve";
 import sassEs from "essass";
 import yargs from 'yargs';
+import copy from 'copy';
 
 async function main(options) {
-  esbuildServe(
-    {
-      entryPoints: ["src/index.ts", "src/about.ts"],
-      bundle: true,
-      outdir: "dist",
-      logLevel: "info",
-      sourcemap: true,
-      minify: true,
-      // splitting: true,
-      // format: "esm",
-      plugins: [sassEs],
-      loader: {
-        ".png": "file",
-        ".html": "text",
+  try {
+    await esbuildServe(
+      {
+        entryPoints: ["src/index.ts", "src/about.ts"],
+        bundle: true,
+        outdir: "dist",
+        logLevel: "info",
+        sourcemap: true,
+        minify: true,
+        // TODO: Enable code splitting
+        // splitting: true,
+        // format: "esm",
+        plugins: [sassEs],
+        loader: {
+          ".png": "file",
+          ".html": "text",
+        },
       },
-    },
-    {
-      root: "dist",
+      {
+        root: "dist",
+      }
+    );
+
+    if (options.pages) {
+      copy('dist/**/*', 'pages/', (err) => {
+        if (err) console.error(err); // TODO: Handle errors
+      });
     }
-  ).catch(() => process.exit(1));
+  } catch (err) {
+    process.exit(1);
+  }
 }
 
 main(yargs(process.argv).argv);
