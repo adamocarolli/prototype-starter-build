@@ -26,12 +26,6 @@ async function main(options) {
         root: "dist",
       }
     );
-
-    if (options.pages) {
-      copy('dist/**/*', 'pages/', (err) => {
-        if (err) console.error(err); // TODO: Handle errors
-      });
-    }
   } catch (err) {
     process.exit(1);
   }
